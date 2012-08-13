@@ -1,0 +1,36 @@
+<!--
+The MIT License
+
+Copyright (c) 2009-2011, Jeffrey Metcalf
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+
+<div>
+    Select this checkbox if you want to allow the optional <i>branch</i> and <i>revision</i> attributes
+    of the ivy.xml module descriptor to help calculate and filter the Hudson project dependency graph.
+    Leaving this option unchecked means that only the mandatory <i>organisation</i> and <i>module</i> 
+    attributes will be used when matching against the project ivy module descriptors.  However it also means
+    that if you have two or more projects configured in Hudson using the same mandatory attribute
+    values in their module descriptors, and another project defines a dynamic revision dependency on one of the
+    modules, then all of the projects will match and will be considered upstream dependencies.  This is usually
+    <b>not</b> what you want if you are using Hudson CI to build different versions (or different
+    source code branches) of the same module at the same time, and selecting this checkbox can help
+    avoid this problem.
+</div>
