@@ -599,6 +599,7 @@ public class IvyModuleSetBuild extends AbstractIvyBuild<IvyModuleSet, IvyModuleS
 
         @Override
         public void cleanUp(BuildListener listener) throws Exception {
+        	super.cleanUp(listener);
             if (project.isAggregatorStyleBuild()) {
                 // schedule downstream builds. for non aggregator style builds,
                 // this is done by each module
